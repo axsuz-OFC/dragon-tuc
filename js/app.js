@@ -47,6 +47,7 @@ function renderFooter() {
                 <p>Age : <span>19 years</span></p>
                 <p>Contact : <span>+94705215116</span></p>
             </div>
+            <p class="axsuz-credit">©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀxꜱᴜᴢ-ᴏꜰᴄ : ᴘʀᴀᴍᴏᴅ ᴀᴅɪᴛʜʏᴀ</p>
         </div>
     `;
 }

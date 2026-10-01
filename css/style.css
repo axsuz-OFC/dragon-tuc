@@ -294,6 +294,20 @@ body::after {
     50% { opacity: 1; text-shadow: 0 0 15px #ff00aa, 0 0 30px #8800ff; }
 }
 
+.axsuz-credit {
+    margin-top: 15px;
+    font-size: 10px;
+    color: #ff00aa;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(255,0,170,0.6), 0 0 16px rgba(136,0,255,0.4);
+    animation: creditBlink 3s ease-in-out infinite;
+}
+
+@keyframes creditBlink {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 15px #ff00aa, 0 0 30px #8800ff; }
+}
+
 /* ===== SECTION TITLE ===== */
 .section-title {
     display: flex;
@@ -360,12 +374,7 @@ body::after {
     filter: drop-shadow(0 0 10px rgba(255,0,170,0.5));
 }
 
-.pack-name {
-    font-size: 13px;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 1px;
-}
+.pack-name { font-size: 13px; font-weight: bold; color: #fff; letter-spacing: 1px; }
 
 .pack-price {
     font-size: 16px;
@@ -374,16 +383,11 @@ body::after {
     text-shadow: 0 0 10px rgba(255,0,170,0.8);
 }
 
-.pack-amount {
-    font-size: 11px;
-    color: #ccc;
-    letter-spacing: 1px;
-}
+.pack-amount { font-size: 11px; color: #ccc; letter-spacing: 1px; }
 
 .pack-badge {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 8px; right: 8px;
     background: linear-gradient(135deg, #ff00aa, #8800ff);
     color: #fff;
     padding: 3px 8px;
@@ -393,13 +397,8 @@ body::after {
     letter-spacing: 1px;
 }
 
-.pack-badge.vip {
-    background: linear-gradient(135deg, #ffaa00, #ff0044);
-}
-
-.pack-badge.weekly {
-    background: linear-gradient(135deg, #00aaff, #8800ff);
-}
+.pack-badge.vip { background: linear-gradient(135deg, #ffaa00, #ff0044); }
+.pack-badge.weekly { background: linear-gradient(135deg, #00aaff, #8800ff); }
 
 /* ===== FORM ===== */
 .form-box {
@@ -471,10 +470,36 @@ body::after {
     margin-bottom: 8px;
 }
 
-.selected-pack p {
-    color: #fff;
-    font-size: 13px;
+.selected-pack p { color: #fff; font-size: 13px; letter-spacing: 1px; }
+
+/* ===== COUNTER CARD ===== */
+.counter-card {
+    background: linear-gradient(135deg, rgba(255,0,170,0.1), rgba(136,0,255,0.1));
+    border: 1px solid rgba(255,0,170,0.4);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(255,0,170,0.2);
+}
+
+.counter-card .counter-name { font-size: 13px; color: #fff; font-weight: bold; letter-spacing: 1px; }
+
+.counter-card .counter-count {
+    font-size: 18px;
+    color: #ff00aa;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255,0,170,0.8);
+}
+
+.counter-card .counter-user {
+    font-size: 10px;
+    color: #888;
     letter-spacing: 1px;
+    margin-top: 4px;
+    word-break: break-all;
 }
 
 /* ===== BOTTOM NAV ===== */
@@ -514,41 +539,6 @@ body::after {
     width: 25px; height: 2px;
     background: linear-gradient(90deg, #ff00aa, #8800ff);
     box-shadow: 0 0 15px #ff00aa, 0 0 30px #8800ff;
-}
-
-/* ===== COUNTER CARD ===== */
-.counter-card {
-    background: linear-gradient(135deg, rgba(255,0,170,0.1), rgba(136,0,255,0.1));
-    border: 1px solid rgba(255,0,170,0.4);
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 20px rgba(255,0,170,0.2);
-}
-
-.counter-card .counter-name {
-    font-size: 13px;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.counter-card .counter-count {
-    font-size: 18px;
-    color: #ff00aa;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(255,0,170,0.8);
-}
-
-.counter-card .counter-user {
-    font-size: 10px;
-    color: #888;
-    letter-spacing: 1px;
-    margin-top: 4px;
-    word-break: break-all;
 }
 
 /* ===== MUSIC BAR ===== */
