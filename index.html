@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dragon TUC - Top Up Center</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="splash-screen" id="splash">
+    <div class="splash-title">
+        <span class="highlight">DRAGON</span> TUC
+    </div>
+    <div class="splash-line"></div>
+    <div class="splash-subtitle">⚡ NEXT GEN TOP UP CENTER ⚡</div>
+</div>
+
+<div class="landing-content" id="mainContent">
+    <div class="hero-badge">⚡ 𝐃𝐑𝐀𝐆𝐎𝐍 𝐓𝐔𝐂 𝐯𝟏.𝟎</div>
+    
+    <div style="text-align:center;margin:20px 0;">
+        <img src="images/logo.jpg" alt="Dragon TUC" class="landing-logo" onerror="this.style.display='none'">
+    </div>
+    
+    <h1 class="landing-title">𝐃𝐑𝐀𝐆𝐎𝐍 𝐓𝐔𝐂</h1>
+    <p class="landing-subtitle">Top Up Center for Free Fire</p>
+    
+    <div class="landing-badge">💎 𝐁𝐞𝐬𝐭 𝐏𝐫𝐢𝐜𝐞𝐬 𝐢𝐧 𝐒𝐫𝐢 𝐋𝐚𝐧𝐤𝐚 💎</div>
+    
+    <div class="landing-features">
+        <span>⚡ Fast Delivery</span>
+        <span>🛡️ 100% Safe</span>
+        <span>💰 Best Prices</span>
+    </div>
+    
+    <div class="landing-buttons">
+        <a href="packs.html" class="btn-primary">💎 𝐕𝐢𝐞𝐰 𝐏𝐚𝐜𝐤𝐬</a>
+        <a href="#how" class="btn-secondary">📖 𝐇𝐨𝐰 𝐈𝐭 𝐖𝐨𝐫𝐤𝐬</a>
+    </div>
+    
+    <div class="landing-stats">
+        <div class="stat-box">
+            <strong>10K+</strong>
+            <span>ORDERS</span>
+        </div>
+        <div class="stat-box">
+            <strong>5K+</strong>
+            <span>CUSTOMERS</span>
+        </div>
+    </div>
+    
+    <div id="how" style="margin-top:40px;padding:20px;background:rgba(255,0,170,0.05);border-radius:12px;border:1px solid rgba(255,0,170,0.3);">
+        <h3 style="color:#ff00aa;margin-bottom:15px;letter-spacing:2px;text-align:center;">📖 𝐇𝐎𝐖 𝐈𝐓 𝐖𝐎𝐑𝐊𝐒</h3>
+        <p style="font-size:12px;color:#ccc;line-height:2;letter-spacing:1px;">
+            <span style="color:#ff00aa;">1.</span> Choose your diamond pack<br>
+            <span style="color:#ff00aa;">2.</span> Enter your Free Fire ID<br>
+            <span style="color:#ff00aa;">3.</span> Make payment<br>
+            <span style="color:#ff00aa;">4.</span> Get diamonds instantly!
+        </p>
+    </div>
+    
+    <div class="bottom-footer">
+        <p class="powered-by">© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴅʀᴀɢᴏɴ ᴛᴜᴄ</p>
+        <p class="server-status">🟢 ꜱᴇʀᴠᴇʀ ɪꜱ ᴏɴʟɪɴᴇ</p>
+        <div class="owner-box">
+            <p>Owner name : <span>Damidu Ohasha</span></p>
+            <p>Age : <span>19 years</span></p>
+            <p>Contact : <span>+94705215116</span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    if (localStorage.getItem('dragontuc_user')) {
+        // Skip splash for returning users
+    }
+    
+    setTimeout(() => {
+        document.getElementById('splash').style.display = 'none';
+        document.getElementById('mainContent').style.opacity = '1';
+    }, 3000);
+</script>
+
+</body>
+</html>

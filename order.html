@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order - Dragon TUC</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar"></nav>
+
+<main class="container">
+    <div class="section-title"><h2>🛒 𝐎𝐑𝐃𝐄𝐑</h2></div>
+    
+    <div id="selectedPackDisplay"></div>
+    
+    <div class="form-box">
+        <h2>𝐄𝐧𝐭𝐞𝐫 𝐅𝐫𝐞𝐞 𝐅𝐢𝐫𝐞 𝐈𝐃</h2>
+        <input type="text" id="ffId" placeholder="Your Free Fire ID" pattern="[0-9]+" inputmode="numeric">
+        <input type="text" id="ffName" placeholder="Your In-Game Name (optional)">
+        <button onclick="placeOrder()">𝐏𝐥𝐚𝐜𝐞 𝐎𝐫𝐝𝐞𝐫</button>
+        <p id="orderStatus" style="text-align:center;color:#ff00aa;font-size:12px;margin-top:10px;display:none;"></p>
+    </div>
+    
+    <div style="text-align:center;margin-top:20px;">
+        <a href="packs.html" style="color:#ff00aa;font-size:13px;text-decoration:none;letter-spacing:1px;">← 𝐁𝐚𝐜𝐤 𝐭𝐨 𝐏𝐚𝐜𝐤𝐬</a>
+    </div>
+</main>
+
+<div id="footer"></div>
+
+<div class="music-bar" id="musicBar">
+    <div class="music-line">
+        <div class="music-title" id="musicTitle">🎵 𝐃𝐫𝐚𝐠𝐨𝐧 𝐓𝐔𝐂 𝐌𝐮𝐬𝐢𝐜</div>
+        <div class="music-progress"></div>
+    </div>
+    <button class="music-btn-play" id="musicPlayBtn">▶</button>
+    <button class="music-btn-stop" id="musicStopBtn">■</button>
+</div>
+
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="js/packs.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const pack = JSON.parse(localStorage.getItem('dragontuc_selected_pack') || 'null');
+    const display = document.getElementById('selectedPackDisplay');
+    
+    if (pack) {
+        display.innerHTML = `
+            <div class="selected-pack">
+                <h3>💎 ${pack.name}</h3>
+                <p>${pack.amount} • ${pack.price}</p>
+            </div>
+        `;
+    } else {
+        display.innerHTML = `
+            <div class="selected-pack" style="border-color:#ff0044;">
+                <h3 style="color:#ff0044;">No pack selected</h3>
+                <p>Please select a pack first</p>
+                <a href="packs.html" style="display:inline-block;margin-top:10px;padding:8px 20px;background:linear-gradient(135deg,#ff00aa,#8800ff);color:#fff;border-radius:20px;text-decoration:none;font-size:12px;">Choose Pack</a>
+            </div>
+        `;
+    }
+});
+
+function placeOrder() {
+    const pack = JSON.parse(localStorage.getItem('dragontuc_selected_pack') || 'null');
+    const ffId = document.getElementById('ffId').value.trim();
+    const ffName = document.getElementById('ffName').value.trim();
+    const status = document.getElementById('orderStatus');
+    
+    if (!pack) {
+        alert('Please select a pack first!');
+        window.location.href = 'packs.html';
+        return;
+    }
+    
+    if (!ffId || ffId.length < 5) {
+        alert('Please enter a valid Free Fire ID!');
+        return;
+    }
+    
+    DragonStorage.addOrder(pack.id, pack.name, ffId);
+    
+    status.style.display = 'block';
+    status.textContent = '✅ Order placed successfully! We will contact you soon.';
+    
+    setTimeout(() => {
+        localStorage.removeItem('dragontuc_selected_pack');
+        window.location.href = 'counters.html';
+    }, 2000);
+}
+</script>
+
+</body>
+</html>

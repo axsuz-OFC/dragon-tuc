@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counters - Dragon TUC</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar"></nav>
+
+<main class="container">
+    <div class="section-title"><h2>📊 𝐏𝐀𝐂𝐊 𝐂𝐎𝐔𝐍𝐓𝐄𝐑𝐒</h2></div>
+    
+    <p style="font-size:11px;color:#888;letter-spacing:1px;text-align:center;margin-bottom:20px;">
+        Total applications for each pack
+    </p>
+    
+    <div id="countersList"></div>
+</main>
+
+<div id="footer"></div>
+
+<div class="music-bar" id="musicBar">
+    <div class="music-line">
+        <div class="music-title" id="musicTitle">🎵 𝐃𝐫𝐚𝐠𝐨𝐧 𝐓𝐔𝐂 𝐌𝐮𝐬𝐢𝐜</div>
+        <div class="music-progress"></div>
+    </div>
+    <button class="music-btn-play" id="musicPlayBtn">▶</button>
+    <button class="music-btn-stop" id="musicStopBtn">■</button>
+</div>
+
+<nav class="bottom-nav" id="bottomNav"></nav>
+
+<script src="js/packs.js"></script>
+<script src="js/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const list = document.getElementById('countersList');
+    const orders = DragonStorage.getOrders();
+    
+    list.innerHTML = PACKS.map(pack => {
+        const packOrders = orders.filter(o => o.packId === pack.id);
+        const count = packOrders.length;
+        const lastUser = packOrders[0]?.ffId || 'No orders yet';
+        
+        return `
+            <div class="counter-card">
+                <div>
+                    <div class="counter-name">💎 ${pack.name}</div>
+                    <div class="counter-user">Last ID: ${lastUser}</div>
+                </div>
+                <div class="counter-count">${count}</div>
+            </div>
+        `;
+    }).join('');
+});
+</script>
+
+</body>
+</html>
